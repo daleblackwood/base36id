@@ -1,0 +1,19 @@
+{
+  "name": "base36id",
+  "version": "1.0.0",
+  "description": "Base36Id: Generating Human-readable Alphanumeric Identifiers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests"
+  },
+  "keywords": [
+    "base36",
+    "human-readable",
+    "id",
+    "identifier",
+    "key"
+  ],
+  "author": "Dale Blackwood",
+  "license": "MIT",
+  "devDependencies": {}
+}
