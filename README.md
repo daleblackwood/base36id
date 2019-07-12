@@ -1,6 +1,7 @@
+[![npm version](https://badge.fury.io/js/base36id.svg)](https://badge.fury.io/js/base36id)
+
 ## Base36 id strings
 This set of functions exists to convert various data types to and from base36 strings.
-
 
 ### Why a base36 string?
  - Base36 strings are great way to shorten numeric ids for external applications. For example:
@@ -11,7 +12,6 @@ This set of functions exists to convert various data types to and from base36 st
 ### Where have I seen this before?
  - Microsoft product keys
  - Various HR software
-
 
 ### Methods
 
