@@ -29,21 +29,27 @@ function uintFromBase36(s) {
     return result;
 }
 
-function uintArrayToBase36(uints) {
+function uintArrayToBase36(uints, segmentLength) {
     if (uints instanceof Array === false) throw new Error("input needs to be an array of uints");
     let result = "";
     for (let i = 0; i<uints.length; i++) {
         result += uintToBase36(uints[i]);
     }
+    if (result.length > segmentLength) {
+        throw new RangeError("Can't encode string, as segment length isn't long enough");
+    }
+    while (result.length < segmentLength) {
+        result = "0" + result;
+    }
     return result;
 }
 
-function uintArrayFromBase36(s, len) {
+function uintArrayFromBase36(s, segmentLength) {
     if (typeof s !== "string") throw new Error("input needs to be string");
-    if (typeof len !== "number" || isNaN(len) || len < 2) throw new Error("len needs to be number greater than 1");
+    if (typeof segmentLength !== "number" || isNaN(segmentLength) || segmentLength < 2) throw new Error("len needs to be number greater than 1");
     let result = [];
-    for (let i=0; i<s.length; i += len) {
-        result.push(uintFromBase36(s.substr(i, len)));
+    for (let i=0; i<s.length; i += segmentLength) {
+        result.push(uintFromBase36(s.substr(i, segmentLength)));
     }
     return result;
 }

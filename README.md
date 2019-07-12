@@ -19,6 +19,7 @@ This set of functions exists to convert various data types to and from base36 st
 
 `uintFromBase36(s)` - convert a base36 id string to a number
 
-`uintArrayToBase36(uints)` - convert an array of numbers to a base36 id string
+`uintArrayToBase36(uints, segmentLength)` - convert an array of numbers to a base36 id string at the specified segment length
 
-`uintArrayFromBase36(s, len)` - convert a base36 id string to an array of numbers at the specified length
+`uintArrayFromBase36(s, segmentLength)` - convert a base36 id string to an array of numbers at the specified segment length
+
