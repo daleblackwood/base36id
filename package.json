@@ -1,6 +1,6 @@
 {
   "name": "base36id",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Base36Id: Generating Human-readable Alphanumeric Identifiers",
   "main": "index.js",
   "scripts": {

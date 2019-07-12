@@ -33,13 +33,14 @@ function uintArrayToBase36(uints, segmentLength) {
     if (uints instanceof Array === false) throw new Error("input needs to be an array of uints");
     let result = "";
     for (let i = 0; i<uints.length; i++) {
-        result += uintToBase36(uints[i]);
-    }
-    if (result.length > segmentLength) {
-        throw new RangeError("Can't encode string, as segment length isn't long enough");
-    }
-    while (result.length < segmentLength) {
-        result = "0" + result;
+        let s = uintToBase36(uints[i]);
+        if (s.length > segmentLength) {
+            throw new RangeError("Can't encode string, as segment length isn't long enough");
+        }
+        while (s.length < segmentLength) {
+            s = "0" + s;
+        }
+        result += s;
     }
     return result;
 }
